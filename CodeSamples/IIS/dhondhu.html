@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Love Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #ffe6eb;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .calculator {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      width: 300px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      color: #e6005c;
+    }
+
+    input {
+      width: 90%;
+      padding: 8px;
+      margin: 8px 0;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background: #e6005c;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background: #cc0052;
+    }
+
+    #result {
+      margin-top: 15px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="calculator">
+    <h1>❤️ Love Calculator ❤️</h1>
+
+    <input type="text" id="name1" placeholder="Your Name">
+    <input type="text" id="name2" placeholder="Their Name">
+
+    <button onclick="calculateLove()">Calculate</button>
+
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function calculateLove() {
+      const name1 = document.getElementById("name1").value.trim();
+      const name2 = document.getElementById("name2").value.trim();
+      const result = document.getElementById("result");
+
+      if (name1 === "" || name2 === "") {
+        result.textContent = "Please enter both names 💡";
+        return;
+      }
+
+      // Fun random percentage
+      const loveScore = Math.floor(Math.random() * 101);
+
+      result.textContent = `${name1} ❤️ ${name2} = ${loveScore}%`;
+    }
+  </script>
+
+</body>
+</html>
